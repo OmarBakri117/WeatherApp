@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <Button
+        android:id="@+id/btn_getCityID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btn_getCityID_click"
+        android:layout_marginEnd="5dp"
+        android:text="City ID"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_weather_cityID"
+        app:layout_constraintEnd_toStartOf="@+id/btn_weather_cityID"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_weather_cityID"
+        android:layout_width="wrap_content"
+        android:onClick="btn_weather_cityID_click"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="1dp"
+        android:text="Weather by ID"
+        app:layout_constraintEnd_toStartOf="@+id/btn_weather_cityName"
+        app:layout_constraintStart_toEndOf="@+id/btn_getCityID"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+
+
+    <EditText
+        android:id="@+id/edtInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_getCityID" />
+
+    <ListView
+        android:id="@+id/lst"
+        android:layout_width="395dp"
+        android:layout_height="549dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtInput" />
+</android.support.constraint.ConstraintLayout>
